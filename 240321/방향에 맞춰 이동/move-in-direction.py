@@ -1,18 +1,22 @@
 x, y = 0, 0
 N = int(input())
 
-dx, dy = 0, 0
+dx = [1, -1, 0, 0]
+dy = [0, 0, -1, 1]
 
 for i in range(N):
     loc, dis = input().split()
     dis= int(dis)
     if loc == 'E':
-        dx += dis
+        a = 0
     elif loc == 'W':
-        dx -= dis
+        a = 1
     elif loc == 'S':
-        dy -= dis
+        a = 2
     else:
-        dy += dis
+        a = 3
+
+    x += dx[a] * dis
+    y += dy[a] * dis
         
-print(dx, dy)
+print(x, y)
